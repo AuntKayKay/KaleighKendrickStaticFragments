@@ -43,12 +43,9 @@ public class DataDisplayFragment extends Fragment {
 
     /**
      * Stores the product of the two numbers.
-     * @param integer1 The first integer.
-     * @param integer2 The second integer.
-     * @param results The product of the two integers.
      */
-    public void multiply(double integer1, double integer2, double results) {
-        this.results = integer1 * integer2;
+    public void multiply() {
+        this.results = this.integer1 * this.integer2;
     }
 
     /**
