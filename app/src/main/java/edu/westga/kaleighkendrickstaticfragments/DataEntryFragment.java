@@ -21,14 +21,26 @@ public class DataEntryFragment extends Fragment {
     EditText textEntry2;
     DataEntryListener listener;
 
+    /**
+     * Gets the two numbers when the multiply button is clicked.
+     */
     interface DataEntryListener {
         void onDataEntry(double entry1, double entry2);
     }
 
+    /**
+     * Constructor.
+     */
     public DataEntryFragment() {
         // Required empty public constructor
     }
 
+    /**
+     * Gets the numbers entered by the user in the EditText fields.
+     * Calls the data member listener's onDataEntry method and passes it
+     * the two double values from the EditText fields.
+     * @param v The view.
+     */
     public void multiplyButtonClicked(View v){
         double firstNumber = Double.parseDouble(this.textEntry1.getText().toString());
         double secondNumber = Double.parseDouble(this.textEntry2.getText().toString());
