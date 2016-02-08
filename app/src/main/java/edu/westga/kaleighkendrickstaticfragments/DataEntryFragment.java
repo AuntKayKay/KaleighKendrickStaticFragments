@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.EventObject;
 
@@ -42,8 +43,14 @@ public class DataEntryFragment extends Fragment {
      * @param v The view.
      */
     public void multiplyButtonClicked(View v){
-        double firstNumber = Double.parseDouble(this.textEntry1.getText().toString());
-        double secondNumber = Double.parseDouble(this.textEntry2.getText().toString());
+        double firstNumber = 0;
+        double secondNumber = 0;
+        try{
+            firstNumber = Double.parseDouble(this.textEntry1.getText().toString());
+            secondNumber = Double.parseDouble(this.textEntry2.getText().toString());
+        } catch(Exception e){
+            //Error goes here
+        }
         listener.onDataEntry(firstNumber, secondNumber);
     }
 

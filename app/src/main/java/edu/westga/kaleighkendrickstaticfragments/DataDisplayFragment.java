@@ -17,6 +17,7 @@ public class DataDisplayFragment extends Fragment {
     double integer1;
     double integer2;
     double results;
+    String error;
 
     /**
      * Constructor
@@ -30,7 +31,9 @@ public class DataDisplayFragment extends Fragment {
      * @param integer1 The first integer.
      */
     public void setInteger1(double integer1) {
-        this.integer1 = integer1;
+        if(Double.class.isInstance(this.integer1)){
+            this.integer1 = integer1;
+        }
     }
 
     /**
@@ -38,7 +41,10 @@ public class DataDisplayFragment extends Fragment {
      * @param integer2 The second integer.
      */
     public void setInteger2(double integer2) {
-        this.integer2 = integer2;
+        if(Double.class.isInstance(this.integer2)){
+            this.integer2 = integer2;
+        }
+
     }
 
     /**
@@ -52,14 +58,22 @@ public class DataDisplayFragment extends Fragment {
      * Displays the product.
      */
     public void displayProduct() {
-        this.zeroTextView.setText(Double.toString(this.results));
+        if(Double.class.isInstance(this.results)){
+            this.zeroTextView.setText(Double.toString(this.results));
+        } else {
+           this.error="Invalid Input:  Please enter a number.";
+        }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View theView = inflater.inflate(R.layout.fragment_data_display, container, false);
-        TextView theTextView = zeroTextView;
+        this.zeroTextView = (TextView) theView.findViewById(R.id.textView0);
+        TextView myTextView = (TextView)
+                theView.findViewById(R.id.displayError);
+        myTextView.setText(this.error);
         return theView;
     }
 

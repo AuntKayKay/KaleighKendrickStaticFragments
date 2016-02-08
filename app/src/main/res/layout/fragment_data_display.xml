@@ -20,4 +20,14 @@
         android:layout_gravity="center_horizontal"
         android:id="@+id/addButton" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/displayError"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20sp"
+        android:textColor="#fb0505"
+        android:textStyle="bold"
+        android:textAlignment="center" />
+
 </LinearLayout>

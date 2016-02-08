@@ -6,13 +6,15 @@
     tools:context="edu.westga.kaleighkendrickstaticfragments.DataEntryFragment"
     android:weightSum="1">
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/enterNumberText"
+        android:text="@string/instructions"
+        android:id="@+id/enterTextNumber"
         android:layout_gravity="center_horizontal"
-        android:text="@string/enterNumbersText"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <EditText
         android:layout_width="match_parent"
@@ -33,4 +35,5 @@
         android:text="MULTIPLY"
         android:id="@+id/buttonMultiply"
         android:layout_gravity="center_horizontal" />
+
 </LinearLayout>
