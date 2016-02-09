@@ -3,14 +3,14 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.westga.kaleighkendrickstaticfragments.DataDisplayFragment">
+    tools:context=".DataProductDisplayFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="0"
-        android:id="@+id/textView0"
+        android:id="@+id/textViewProduct"
         android:textAlignment="center" />
 
     <Button
@@ -19,15 +19,5 @@
         android:text="ADD"
         android:layout_gravity="center_horizontal"
         android:id="@+id/addButton" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/displayError"
-        android:layout_gravity="center_horizontal"
-        android:textSize="20sp"
-        android:textColor="#fb0505"
-        android:textStyle="bold"
-        android:textAlignment="center" />
 
 </LinearLayout>

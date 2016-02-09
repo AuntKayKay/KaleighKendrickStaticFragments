@@ -74,6 +74,7 @@ public class DataEntryFragment extends Fragment {
                 multiplyButtonClicked(v);
             }
         });
+
         return theView;
     }
 

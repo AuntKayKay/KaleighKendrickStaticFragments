@@ -12,17 +12,16 @@ import android.widget.TextView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class DataDisplayFragment extends Fragment {
-    TextView zeroTextView;
+public class DataSumDisplayFragment extends Fragment {
+    TextView sumTextView;
     double integer1;
     double integer2;
     double results;
-    String error;
 
     /**
      * Constructor
      */
-    public DataDisplayFragment() {
+    public DataSumDisplayFragment() {
         // Required empty public constructor
     }
 
@@ -48,32 +47,28 @@ public class DataDisplayFragment extends Fragment {
     }
 
     /**
-     * Stores the product of the two numbers.
+     * Stores the sum of the two numbers.
      */
-    public void multiply() {
-        this.results = this.integer1 * this.integer2;
+    public void add() {
+        this.results = this.integer1 + this.integer2;
     }
 
     /**
-     * Displays the product.
+     * Displays the sum.
      */
-    public void displayProduct() {
+    public void displaySum() {
         if(Double.class.isInstance(this.results)){
-            this.zeroTextView.setText(Double.toString(this.results));
-        } else {
-           this.error="Invalid Input:  Please enter a number.";
+            this.sumTextView.setText(Double.toString(this.results));
         }
-
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View theView = inflater.inflate(R.layout.fragment_data_display, container, false);
-        this.zeroTextView = (TextView) theView.findViewById(R.id.textView0);
-        TextView myTextView = (TextView)
-                theView.findViewById(R.id.displayError);
-        myTextView.setText(this.error);
+        View theView = inflater.inflate(R.layout.fragment_data_sum_display, container, false);
+        this.sumTextView = (TextView) theView.findViewById(R.id.textViewSum);
         return theView;
     }
 

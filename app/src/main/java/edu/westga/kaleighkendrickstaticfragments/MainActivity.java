@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity implements DataEntryFragment.DataEntryListener {
+public class MainActivity extends AppCompatActivity implements DataEntryFragment.DataEntryListener, DataProductDisplayFragment.DataEntryListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,15 +17,6 @@ public class MainActivity extends AppCompatActivity implements DataEntryFragment
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     @Override
@@ -51,18 +42,33 @@ public class MainActivity extends AppCompatActivity implements DataEntryFragment
     }
 
     /**
-     * Gets a reference to the DataDisplayFragment using the FragmentManager returned
+     * Gets a reference to the DataProductDisplayFragment using the FragmentManager returned
      * by the activity's getSupportFragmentManager method.
      * @param entry1 The first entry.
      * @param entry2 The second entry.
      */
     @Override
     public void onDataEntry(double entry1, double entry2) {
-        DataDisplayFragment displayFragment = (DataDisplayFragment)
-                getSupportFragmentManager().findFragmentById(R.id.dataDisplayFragment);
-        displayFragment.setInteger1(entry1);
-        displayFragment.setInteger2(entry2);
-        displayFragment.multiply();
-        displayFragment.displayProduct();
+        DataProductDisplayFragment displayFragmentProduct = (DataProductDisplayFragment)
+                getSupportFragmentManager().findFragmentById(R.id.dataProductDisplayFragment);
+        displayFragmentProduct.setInteger1(entry1);
+        displayFragmentProduct.setInteger2(entry2);
+        displayFragmentProduct.multiply();
+        displayFragmentProduct.displayProduct();
+    }
+    /**
+     * Gets a reference to the DataProductDisplayFragment using the FragmentManager returned
+     * by the activity's getSupportFragmentManager method.
+     * @param entry1 The first entry.
+     * @param entry2 The second entry.
+     */
+    @Override
+    public void onDataAdd (double entry1, double entry2){
+        DataSumDisplayFragment displayFragmentSum = (DataSumDisplayFragment)
+                getSupportFragmentManager().findFragmentById(R.id.dataSumDisplayFragment);
+        displayFragmentSum.setInteger1(entry1);
+        displayFragmentSum.setInteger2(entry2);
+        displayFragmentSum.add();
+        displayFragmentSum.displaySum();
     }
 }

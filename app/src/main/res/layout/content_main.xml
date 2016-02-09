@@ -31,9 +31,17 @@
         <fragment
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:name="edu.westga.kaleighkendrickstaticfragments.DataDisplayFragment"
-            android:id="@+id/dataDisplayFragment"
+            android:name="edu.westga.kaleighkendrickstaticfragments.DataProductDisplayFragment"
+            android:id="@+id/dataProductDisplayFragment"
             android:layout_gravity="center_horizontal"
-            tools:layout="@layout/fragment_data_display" />
+            tools:layout="@layout/fragment_data_product_display" />
+
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:name="edu.westga.kaleighkendrickstaticfragments.DataSumDisplayFragment"
+            android:id="@+id/dataSumDisplayFragment"
+            android:layout_gravity="center_horizontal"
+            tools:layout="@layout/fragment_data_sum_display" />
     </LinearLayout>
 </RelativeLayout>
